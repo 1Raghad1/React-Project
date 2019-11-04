@@ -10,18 +10,16 @@ export default class MainCom extends Component {
   render() {
  
     return (
-     <Carousel>
-       <Carousel.Item> 
       
-        {console.log(this.props.img)}
-        <img src={this.props.img} alt=""/>
-        
+       <Carousel.Item > 
+      <img src={this.props.img}/>
        <Carousel.Caption> 
           <h3>{this.props.title}</h3>
           <p>{this.props.pref}</p>
         </Carousel.Caption>
       </Carousel.Item> 
-      </Carousel>
+     
+
      
 
     )
