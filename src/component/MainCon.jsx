@@ -1,10 +1,26 @@
 import React, { Component } from 'react'
-import Comp from './Comp'
-import {CardGroup} from 'react-bootstrap'
+import MainCom from './MainCom'
 import InfiniteCarousel from 'react-leaf-carousel'
-export default class CompCon extends Component {
+// import axios from 'axios'
+export default class MainCon extends Component {
+   
     render() {
+        let main=this.props.data.results.map((item) => {
+           if(this.props.data.results.indexOf( item)<20){
+               console.log(item)
+            let url = this.props.conf.images.base_url + "w500" + item.poster_path
+// console.log(item.id)
+            return <MainCom 
+             img={url}
+              title={item.name} 
+              pref={item.overview}
+            //   key={item.id}
+             />
+           }
+              })
+
         return (
+       
             <InfiniteCarousel style={{margin:'50px'}}
             breakpoints={[
               {
@@ -33,8 +49,9 @@ export default class CompCon extends Component {
             cycleInterval={2000}
             slidesSpacing={160}
           >
-                {/* {main} */}
+                {main}
                </InfiniteCarousel> 
         )
     }
 }
+

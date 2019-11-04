@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import './css/App.css';
 // import dotenv from 'dotenv'
-// import CompCon from './component/CompCon'
+import CompCon from './component/CompCon'
 import axios from 'axios'
 import Header from './component/Header'
 import Footer from './component/Footer'
+import {Spinner} from 'react-bootstrap'
 
 // import MainCom from './component/MainCom'
 import MainCon from './component/MainCon'
@@ -45,14 +46,20 @@ this.fetchData()
   render() {
     console.log(this.state.data)
     if(this.state.isLoading){
-      return <div>Waiting...</div>
+      return <Spinner animation="border" role="status">
+      <span className="sr-only">Loading...</span>
+    </Spinner>
     }
     
     return (
       <div className="App">
-        <Header />
-        {console.log(this.state.data)}
+        <Header/>
+        <br/>
+     <h2 style={{color:'white',float:'left',paddingLeft:'20px'}}>Trending</h2>
     <MainCon data={this.state.data} conf={this.state.conf} ></MainCon> 
+   
+     <br/>
+     <CompCon></CompCon>
         <Footer />
 
       </div>
