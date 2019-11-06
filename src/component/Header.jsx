@@ -5,21 +5,21 @@ import { Nav, Navbar, Button, Form, FormControl } from 'react-bootstrap'
 export default class HeadFoot extends Component {
 
   render() {
-    let main = this.props.geners.genres.map((item) => {
-      if(this.props.geners.genres.indexOf( item)<9){
+    // let main = this.props.geners.genres.map((item) => {
+    //   if(this.props.geners.genres.indexOf( item)<9){
        
-      return  <Nav.Link href="#link" key={item.id} id={item.id}>{item.name}</Nav.Link>
+    //   return  <Nav.Link href="#link" key={item.id} id={item.id}>{item.name}</Nav.Link>
 
-       }
-    })
+    //    }
+    // })
   
     return (
       <div className ='navBar'>
-        <Navbar bg="dark" variant="dark">
+        <Navbar  style={{backgroundColor:'#c21206'}}>
           <Navbar.Brand href="/">
             <img
               alt=""
-              src="https://digitalsynopsis.com/wp-content/uploads/2018/05/creative-typographic-logos-13.jpg"
+              src="https://icon-library.net/images/theater-icon-png/theater-icon-png-6.jpg"
               width="60"
               height="60"
               className="d-inline-block align-top " style={{ margin: -15 }}
@@ -27,13 +27,10 @@ export default class HeadFoot extends Component {
           </Navbar.Brand>
           <Nav className="mr-auto">
 
-                {main}
+                {/* {main} */}
           
           </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="dark">Search</Button>
-          </Form>
+         
         </Navbar>
 
       </div>

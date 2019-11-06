@@ -6,30 +6,30 @@ export default class Details extends Component {
     _ismounted = true
     state = {
         data: '',
-        loading:true
+        loading: true
     }
     componentDidMount() {
 
-        if (this._ismounted){
+        if (this._ismounted) {
 
-            this.setState({ data: this.props.data,  })
+            this.setState({ data: this.props.data, })
             const { match: { params } } = this.props;
             axios.get(`https://api.themoviedb.org/3/tv/${params.id}?api_key=33a2984bebc4d620c6e39712c8c4877d&language=en-US`)
-    .then(({ data: tvdata }) => {
-      console.log('user', tvdata);
+                .then(({ data: tvdata }) => {
+                    console.log('user', tvdata);
 
-      this.setState({ data:tvdata ,loading: false});
-      console.log(this.state.data.genres)
-    });
-}
-}
+                    this.setState({ data: tvdata, loading: false });
+                    console.log(this.state.data.genres)
+                });
+        }
+    }
 
-    
+
     componentWillUnmount() {
         this._ismounted = false
     }
     render() {
-      
+
         let elm = ''
         let season
         if (!this.state.loading) {
@@ -46,18 +46,15 @@ export default class Details extends Component {
                         </Card.Header>
                         <Accordion.Collapse variant="dark" eventKey="0">
                             <Card.Body>
-
-
-
-                                <Card className="bg-dark text-white" style={{ width: '15rem' }} >
+                                <Card className="bg-dark text-white" style={{ width: '18rem' }} >
                                     <div className='hovereffect' >
-                                        <Card.Img src={`http://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="Card image" />
-                                        <Card.ImgOverlay/>
-                                        <p>Air Date: {item.air_date}</p>
-                                            <p>Number Of episode: {item.episode_count}</p>
-                                        
-                                        <div className="overlay" >
 
+                                        <Card.Img src={`http://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="Card image" />
+                                        <div className="overlay" >
+                                        <h5 style={{marginTop:'10px'}}>Air Date: {item.air_date}</h5>
+                                        <h5 style={{marginTop:'10px'}}>Number of Episode: {item.episode_count}</h5>
+                                        <p style={{marginTop:'30px'}}>{item.overview}</p>
+                                       
                                         </div>
                                     </div>
 
@@ -80,18 +77,19 @@ export default class Details extends Component {
                     <Container>
                         <Row>
 
-                            <Col> <img className='detaImg' src={`http://image.tmdb.org/t/p/w500/${this.state.data.poster_path}`} height='650px' wedith='150px' /></Col>:
-              <Col>
-                                <h6 style={{ display: 'inline' }}>Status : </h6><h6 style={{ display: 'inline-block', marginBottom: '50px', marginTop: '50px' }}>{this.state.data.status}</h6><h6 style={{ display: 'inline' }}> on {this.state.data.networks[0].name} </h6>
-
-                                <p>{this.state.data.overview}</p>
-                                <h6>Genres</h6>
+                            <Col> <img className='detaImg' src={`http://image.tmdb.org/t/p/w500/${this.state.data.poster_path}`} height='650px' wedith='150px' style={{ marginTop: '50px' }} /></Col>
+                            <Col>
+                                <h5 style={{ display: 'inline-block', marginTop: " 50px" }}>{this.state.data.name} </h5>
                                 <ul>
                                     {elm}
                                 </ul>
+                                <p style={{ marginTop: " 30px", marginTop: " 30px" }}>{this.state.data.overview}</p>
 
-                                <h6 style={{ display: 'inline' }}>IMDB Raiting : </h6><h6 style={{ display: 'inline-block', marginBottom: '50px', marginTop: '50px' }}>{this.state.data.vote_average}</h6>
 
+
+                                <h5 style={{ display: 'inline' }}>IMDB Raiting : </h5><h5 style={{ display: 'inline-block', marginBottom: '30px' }}>{this.state.data.vote_average}</h5> <br></br>
+
+                                <h5 style={{ display: 'inline' }}>Status : </h5><h5 style={{ display: 'inline-block', marginBottom: '30px' }}>{this.state.data.status}</h5><h5 style={{ display: 'inline' }}> on {this.state.data.networks[0].name} </h5>
                             </Col>
                         </Row>
                         <Row>
@@ -100,7 +98,7 @@ export default class Details extends Component {
                     </Container>
                 </div>
             </div>
-         
+
         )
     }
 }

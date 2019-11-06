@@ -3,13 +3,13 @@ import {Container,Navbar,NavbarBrand} from 'react-bootstrap'
 import '..//css/style.css'
 export default class Footer extends Component {
     render() {
-        
+
         return (
 
 <div className="fixed-bottom">  
-            <Navbar style={{backgroundColor:'red'}}>
+            <Navbar style={{backgroundColor:"#c21206"}}>
                 <Container>
-                    <NavbarBrand>Footer</NavbarBrand>
+                    <NavbarBrand>Raghad Allhyani © 2019</NavbarBrand>
                 </Container>
             </Navbar>
         </div>

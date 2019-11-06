@@ -119,14 +119,29 @@ padding-left:20px;
 padding-right: 20px;
 /* padding-top:200px */
 }
-.detailsDiv ul{
-    display: flex;
-    justify-content:space-around; 
+/* .detailsDiv ul{
+    
+    display:flex;
+    justify-content:space-evenly; 
+    
+   
 }
  li{
-display:inline
-}
+display:inline-block;
+float:left;
+} */
+ul {
+    list-style-type: none;
+    margin-left: -40px;
+  }
+  
+  ul li{
+    display:inline-block;
+  
+  }
  .detailsDiv {
+    display: flex;
+    justify-content: space-around;
     color:white;
      background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url("http://image.tmdb.org/t/p/w780/9yKCJTOh9m3Lol2RY3kw99QPH6x.jpg");
      background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
@@ -134,41 +149,17 @@ display:inline
 background-size: 100% 100%;
 
  }
- .navBar{
-     margin-bottom: 100px;
- }
- .dropdown-menu {
-	min-width: 200px;
-}
-.dropdown-menu.columns-2 {
-	min-width: 400px;
-}
-.dropdown-menu.columns-3 {
-	min-width: 600px;
-}
-.dropdown-menu li a {
-	padding: 5px 15px;
-	font-weight: 300;
-}
-.multi-column-dropdown {
-	list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-.multi-column-dropdown li a {
-	display: block;
-	clear: both;
-	line-height: 1.428571429;
-	color: #333;
-	white-space: normal;
-}
-.multi-column-dropdown li a:hover {
-	text-decoration: none;
-	color: #262626;
-	background-color: #999;
-}
- .button{
-     clear: both;
+ 
+ .App h2{
+     margin:20px;
+     padding:10px;
+     text-align: center;
+     font-family:"Times New Roman", Times, serif;
+     color:white;
+     text-shadow: 2px 2px #FF0000;
+     font-size: 40px;
+     border-bottom-color: ivory;
+
  }
 @media (max-width: 767px) {
 	.dropdown-menu.multi-column {

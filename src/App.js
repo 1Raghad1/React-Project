@@ -17,36 +17,13 @@ export default class App extends Component {
     super(props)
     
     this.state = {
-        conf: '',
-        trending: '',
-        popular:'',
         gener:[],
         isLoading: true,
-        current :null
+  
     }
   
 }
-handlerChangeCurrent=(event)=>{
-this.setState({
-  current : event
-})
 
-}
-
-handleDetailsClick = (tvid) =>{
-  const url = `https://api.themoviedb.org/3/tv/${tvid}?api_key=33a2984bebc4d620c6e39712c8c4877d&language=en-US`
-
-  axios({
-    method: 'GET',
-    url: url
-  }).then(response => {
-    console.log(response) // take a look at what you get back!
-    console.log(`Fetching details for ${tvid}`);
-    if(this._isMounted)
-    this.setState({ current: response })
-    console.log( this.state.current)
-  })
-}
 fetchData = () => {
 
     
@@ -63,7 +40,7 @@ fetchData = () => {
         })
     }
 componentDidMount() {
-  // this.handleDetailsClick()
+
 this.fetchData()
 this._isMounted = true;
 }
@@ -87,7 +64,7 @@ componentWillUnmount() {
         <Switch>
         <Route path={"/Details/:id"} render={(props)=>this.state.current!==null  ? <Details  {...props} data={this.state.current} />:null} /> 
 
-     <Route  path="/" exact render ={()=> <Home handlerChangeCurrent={this.handlerChangeCurrent} />}/>
+     <Route  path="/" exact component ={Home}/>
   
      </Switch>
      <br/><br/> <br/><br/><br/><br/> <br/><br/>

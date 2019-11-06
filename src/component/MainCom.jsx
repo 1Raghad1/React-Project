@@ -6,7 +6,7 @@ export default class MainCom extends Component {
     return (
       
       <Card className="bg-dark text-white"style={{ width: '20rem' }} >
-        <div className='hovereffect' onClick={()=>this.props.handleDetailsClick(this.props.id) } >
+        <div className='hovereffect'  >
       <Card.Img  src={this.props.img} alt="Card image" />
       <Card.ImgOverlay/>
       <div className="overlay" >
