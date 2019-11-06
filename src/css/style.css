@@ -167,7 +167,9 @@ background-size: 100% 100%;
 	color: #262626;
 	background-color: #999;
 }
- 
+ .button{
+     clear: both;
+ }
 @media (max-width: 767px) {
 	.dropdown-menu.multi-column {
 		min-width: 240px !important;

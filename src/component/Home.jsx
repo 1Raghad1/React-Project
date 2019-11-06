@@ -6,6 +6,7 @@ import axios from 'axios'
 import Details from './Details'
 import {Spinner} from 'react-bootstrap'
 import MainCon from './MainCon'
+
 // import { Switch, Route } from 'react-router-dom'
 export default class App extends Component {
     _isMounted = false;
@@ -35,6 +36,7 @@ handleDetailsClick = (tvid) =>{
     if(this._isMounted)
     this.setState({ current: response })
     console.log( this.state.current)
+   this.props.handlerChangeCurrent(this.state.current)
   })
 }
 fetchData = () => {
@@ -61,6 +63,7 @@ this.fetchData()
 }
 componentWillUnmount() {
     this._isMounted = false;
+   
   }
   render() {
     // console.log(this.state.data)
@@ -86,11 +89,17 @@ componentWillUnmount() {
      <MainCon data={this.state.today} conf={this.state.conf}  handleDetailsClick={this.handleDetailsClick}></MainCon>
       <Switch>
     {/* <Route exact  path ={'/'} exact component = {Home}/> */}
-      {/* <Route exact path={"/details/:id"}  component ={Details}/> */}
+      <Route exact path={"/Details/:id"} exact component ={Details}/>
       
-     <Route path={"Details/:id"} render={()=>this.state.current ? <Details  data={this.state.current} />:null}  
+     {/* <Route path={"/Details/"} render={()=>this.state.current ? <Details  data={this.state.current} />:null}   */}
   
 />
+{/* <Route path="/Detail/:id" render={({match}) => {
+if(!this.state.current) return <div className="work">error</div>
+return <Detail data={this.state.data.find(s => s.id === parseInt(match.params.id))} />
+  }          
+} /> */}
+
      </Switch>
      <br/>
      <br/> 

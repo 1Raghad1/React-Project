@@ -8,9 +8,11 @@ import Footer from './component/Footer'
 import {Spinner} from 'react-bootstrap'
 import Home from './component/Home'
 import { Switch } from 'react-router-dom'
+import Details from './component/Details'
 
 
 export default class App extends Component {
+  _isMounted = true;
   constructor(props) {
     super(props)
     
@@ -19,9 +21,16 @@ export default class App extends Component {
         trending: '',
         popular:'',
         gener:[],
-        isLoading: true
+        isLoading: true,
+        current :null
     }
   
+}
+handlerChangeCurrent=(event)=>{
+this.setState({
+  current : event
+})
+
 }
 
 handleDetailsClick = (tvid) =>{
@@ -33,29 +42,38 @@ handleDetailsClick = (tvid) =>{
   }).then(response => {
     console.log(response) // take a look at what you get back!
     console.log(`Fetching details for ${tvid}`);
+    if(this._isMounted)
     this.setState({ current: response })
     console.log( this.state.current)
   })
 }
 fetchData = () => {
 
-    let configurationapi = 'https://api.themoviedb.org/3/configuration?api_key=33a2984bebc4d620c6e39712c8c4877d'
+    
     let gener='https://api.themoviedb.org/3/genre/tv/list?api_key=33a2984bebc4d620c6e39712c8c4877d&language=en-US'
-    let urlArray = [configurationapi,gener]
+    let urlArray = [gener]
 
     let promiseArray = urlArray.map(url => axios.get(url));
     axios.all(promiseArray)
         .then(results => {
             let res = results.map(r => r.data);
-            this.setState({  conf: res[0],isLoading: false,gener:res[1]})
+            if(this._isMounted)
+            this.setState({  isLoading: false,gener:res[0]})
             console.log(res)
         })
     }
 componentDidMount() {
+  // this.handleDetailsClick()
 this.fetchData()
+this._isMounted = true;
+}
+
+componentWillUnmount() {
+  this._isMounted = false;
 }
   render() {
-    // console.log(this.state.data)
+    
+    console.log(this.state.current)
     if(this.state.isLoading){
       return <Spinner animation="border" role="status">
       <span className="sr-only">Loading...</span>
@@ -67,9 +85,10 @@ this.fetchData()
     
         <Header geners={this.state.gener}/>
         <Switch>
-     <Route  path="/" exact component ={Home}/>
-     
+        <Route path={"/Details/:id"} render={(props)=>this.state.current!==null  ? <Details  {...props} data={this.state.current} />:null} /> 
 
+     <Route  path="/" exact render ={()=> <Home handlerChangeCurrent={this.handlerChangeCurrent} />}/>
+  
      </Switch>
      <br/><br/> <br/><br/><br/><br/> <br/><br/>
         <Footer />
