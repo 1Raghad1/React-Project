@@ -1,68 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# TV Serise List 
 
-## Available Scripts
+List the most populer tv serise ,trnding ,and today schedule  
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+The project is to collect daily data about the tv tv serise from the The Movie database API
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Technical Used 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```
 
-### `npm test`
+- Reactjs
+- Bootstrap with react
+- axios for API
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Planning and Development Process
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A basic story of your planning and developing this project.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+create the home page style it using bootstrab ,then tried to route to the other component to render the details on the page 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Problem-Solving Strategy
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+What strategy did you use to solve your problems.
 
-## Learn More
+- console logs 
+- browser react developer tool
+- following the website life cycle
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Unsolved problems
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+List unsolved problems which would be fixed in future iterations.
 
-### Code Splitting
+## APIs Used
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+List your APIs you have used in this project and explain why did you use it.
 
-### Analyzing the Bundle Size
+The Movie database API
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+this api is for the news
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Acknowledgments
 
-### Deployment
+Thanks to the instructing team for everything <3
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+---
 
-### `npm run build` fails to minify
+ ## References
+ - react bootstrap
+ - react docs
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
