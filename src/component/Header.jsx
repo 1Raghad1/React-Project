@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
-import { Nav, Navbar, Button, Form, FormControl } from 'react-bootstrap'
+import { Nav, Navbar } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
+import Geners from './Geners'
 
 export default class HeadFoot extends Component {
 
   render() {
-    // let main = this.props.geners.genres.map((item) => {
-    //   if(this.props.geners.genres.indexOf( item)<9){
+    let main = this.props.geners.genres.map((item) => {
+      if(this.props.geners.genres.indexOf( item)){
        
-    //   return  <Nav.Link href="#link" key={item.id} id={item.id}>{item.name}</Nav.Link>
+      return  <Nav.Link href="#" key={item.id} id={item.id}>{item.name}</Nav.Link>
 
-    //    }
-    // })
+       }
+    })
   
     return (
       <div className ='navBar'>
@@ -27,7 +29,7 @@ export default class HeadFoot extends Component {
           </Navbar.Brand>
           <Nav className="mr-auto">
 
-                {/* {main} */}
+                {main}
           
           </Nav>
          

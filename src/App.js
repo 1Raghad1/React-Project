@@ -9,6 +9,7 @@ import {Spinner} from 'react-bootstrap'
 import Home from './component/Home'
 import { Switch } from 'react-router-dom'
 import Details from './component/Details'
+import Geners from './component/Geners'
 
 
 export default class App extends Component {
@@ -65,6 +66,7 @@ componentWillUnmount() {
         <Route path={"/Details/:id"} render={(props)=>this.state.current!==null  ? <Details  {...props} data={this.state.current} />:null} /> 
 
      <Route  path="/" exact component ={Home}/>
+     {/* <Route path={"/Genres/"} component={Geners} />  */}
   
      </Switch>
      <br/><br/> <br/><br/><br/><br/> <br/><br/>
