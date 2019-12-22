@@ -51,7 +51,7 @@ componentWillUnmount() {
 }
   render() {
     
-    console.log(this.state.current)
+    // console.log(this.state.current)
     if(this.state.isLoading){
       return <Spinner animation="border" role="status">
       <span className="sr-only">Loading...</span>
@@ -64,7 +64,7 @@ componentWillUnmount() {
         <Header geners={this.state.gener}/>
         <Switch>
         <Route path={"/Details/:id"} render={(props)=>this.state.current!==null  ? <Details  {...props} data={this.state.current} />:null} /> 
-
+<Route path={"/Genre/:id"} render={(props)=>this.state.current!==null  ? <Geners  {...props} data={this.state.current} />:null} /> 
      <Route  path="/" exact component ={Home}/>
      {/* <Route path={"/Genres/"} component={Geners} />  */}
   

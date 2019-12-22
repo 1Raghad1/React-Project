@@ -63,6 +63,7 @@ componentWillUnmount() {
   
      <h2 style={{color:'white',float:'left',paddingLeft:'20px'}}>Trending</h2>
     <MainCon data={this.state.trending} conf={this.state.conf}    ></MainCon> 
+    
      <br/>
      <br/>
      <h2 style={{color:'white',float:'left',paddingLeft:'20px'}}>Papular</h2>

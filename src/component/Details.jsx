@@ -8,6 +8,7 @@ export default class Details extends Component {
         data: '',
         loading: true
     }
+    
     componentDidMount() {
 
         if (this._ismounted) {
@@ -72,7 +73,7 @@ export default class Details extends Component {
         </Spinner>
         return (
             <div className='detailsDiv' style={{ backgroundImage: 'url(' + `http://image.tmdb.org/t/p/original/${this.state.data.backdrop_path}` + ')', backgroundRepeat: 'no-repeat', backgroundSize: "100% 100%" }}>
-                <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
+                <div style={{ backgroundColor: 'rgba(121, 33, 3, 0.6)' }}>
                     {console.log(this.state.data)}
                     <Container>
                         <Row>

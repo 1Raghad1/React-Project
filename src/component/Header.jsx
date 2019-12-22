@@ -10,7 +10,7 @@ export default class HeadFoot extends Component {
     let main = this.props.geners.genres.map((item) => {
       if(this.props.geners.genres.indexOf( item)){
        
-      return  <Nav.Link href="#" key={item.id} id={item.id}>{item.name}</Nav.Link>
+      return  <a as ='a'  className='navhref' style={{marginLeft:'20px'}} href={`/Genre/${item.id}`} key={item.id} id={item.id}>{item.name}</a>
 
        }
     })
@@ -27,7 +27,7 @@ export default class HeadFoot extends Component {
               className="d-inline-block align-top " style={{ margin: -15 }}
             />
           </Navbar.Brand>
-          <Nav className="mr-auto">
+          <Nav className="m-auto">
 
                 {main}
           

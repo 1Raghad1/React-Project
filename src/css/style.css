@@ -167,3 +167,25 @@ background-size: 100% 100%;
 		overflow-x: hidden;
 	}
 }
+.navhref {
+    display: inline-block;
+    vertical-align: top;
+    /* width: 100px;
+    height: 34px; */
+    /* line-height: 36px; */
+    text-transform: uppercase;
+    text-decoration: none;
+    color:black;
+    /* letter-spacing: 0.1em; */
+    text-align: center;
+    font-size: 14px;
+    /* margin: 10px; */
+    /* position: relative; */
+
+    transition: background-color 0.3s linear, color 0.3s linear;
+  
+  }
+  .navhref:hover {
+    color: #0deca9;
+    background: rgba(255, 255, 255, 0.1);
+  }
